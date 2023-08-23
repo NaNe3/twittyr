@@ -1,0 +1,52 @@
+.sign-box {
+    border: 1px solid #38444d;
+    border-radius: 15px;
+    margin: 100px auto;
+    box-shadow: rgba(136, 153, 166, 0.2) 0px 0px 15px, rgba(136, 153, 166, 0.15) 0px 0px 3px 1px;
+    
+    padding: 20px;
+    color: white;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+.input-container input {
+    border: none;
+    background-color: #192734;
+    border-bottom: 2px solid #8899a6;
+    color: white;
+    
+    font-size: 20px;
+    padding: 30px 0px 5px 10px;
+    
+    width: 100%;
+    border-radius: 3px;
+    outline: 0;
+}
+
+.input-container input::placeholder {
+    font-size: 20px;
+    color: #79818d;
+}
+
+label {
+    font-size: 16px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    transition: all .1s ease-in-out;
+    color: black;
+    color: #8899a6;
+}
+
+#twyyts-prev {
+    display: block;
+    margin: auto;
+    width: 600px;
+    min-height: 1000px;
+    
+    border-left: 1px solid #38444d;
+    border-right: 1px solid #38444d;
+}
