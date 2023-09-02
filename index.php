@@ -56,7 +56,7 @@
                 <div style="width: 100%; border-bottom: 1px solid #38444d; padding: 4px 8px; overflow: auto;">
                     <div class="opt-img" onclick='document.getElementById("profile-modal").style.display = "none";'><span style="font-size: 32px; line-height: 32px; color: #1DA1F2; padding: 0px 5px; margin: 0;">&times;</span></div>
                     
-                    <button style="float: right; margin-top: 5px;" onclick="document.getElementById('prof-save-but').click()">Save</button>
+                    <button style="float: right; margin-top: 5px;" onclick="document.getElementById('prof-save-but').click(); ">Save</button>
                     
                     <p class="info-header" style="padding: 11px; margin-left: 50px;">Edit Profile</p>
                 </div>
@@ -66,7 +66,7 @@
                         <img id="profile-landing" style="width: 100%; height: 175px; margin: 0;">
                         <div class="set-cont" style="left: 285px; top: 70px;" onclick="document.getElementById('landing-input').click()">
                             <div class="nav-opt">
-                                <img src="./res/ast/add.png" id="landing-input-img">
+                                <img src="./res/ast/add.svg" id="landing-input-img">
                             </div>
                         </div>
 
@@ -76,9 +76,9 @@
                     <div style="width: 100%; padding: 15px; position: relative; z-index: 100;">
                         <div style="position: relative;">
                             <img id="profile-pic" src="./res/usr/Opx5_fZ4_400x400.jpg" style="width: 125px; height: 125px; background-color: white; border-radius: 100px; border: 5px solid #15202b; margin: -65px 0px 0px 0px;">
-                            <div class="set-cont" style="left: 39px; top: -12px; margin-top: -12px;" onclick="document.getElementById('pic-input').click()">
+                            <div class="set-cont" style="left: 39px; top: -12px; margin-top: -12px;" onclick=" document.getElementById('pic-input').click()">
                                 <div class="nav-opt">
-                                    <img src="./res/ast/add.png" id="profile-input-img">
+                                    <img src="./res/ast/add.svg" id="profile-input-img">
                                 </div>
                             </div>
 
@@ -157,10 +157,10 @@
                         </div>
 
                         <div style="width: 100%; padding: 0px 10px; position: absolute; bottom: 0; left: 0;">
-                            <div class="opt-img" onclick="document.getElementById('image-modal').click()"><img src="res/ast/pic.png"></div>
-                            <div class="opt-img"><img src="res/ast/gif.png"></div>
-                            <div class="opt-img"><img src="res/ast/poll.png"></div>
-                            <div class="opt-img"><img src="res/ast/emoji.png"></div>
+                            <div class="opt-img" onclick="document.getElementById('image-modal').click()"><img src="res/ast/pic.svg"></div>
+                            <div class="opt-img"><img src="res/ast/gif.svg"></div>
+                            <div class="opt-img"><img src="res/ast/poll.svg"></div>
+                            <div class="opt-img"><img src="res/ast/emoji.svg"></div>
 
                             <div style="float: right;">
                                 <p id="twyyt-char-modal" style="font-size: 12px; color: indianred; display: inline; border-right: 1px solid grey; padding: 12px 16px; display: none;">280</p>
@@ -184,7 +184,7 @@
         <div id="load-modal" class="modal">
 <!--             Modal content -->
             <div class="modal-content" style="width: 100%; height: 100%;">
-                <img id="twittyr-pic" src="./res/ast/twitterer.png" style="width: 100px; height: 100px;">
+                <img id="twittyr-pic" src="./res/ast/twitterer.svg" style="width: 100px; height: 100px;">
             </div>
         </div>
         

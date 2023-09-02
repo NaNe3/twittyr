@@ -12,7 +12,6 @@ document.getElementById("user-drop").style.display = "block";
 document.getElementById("profile-btn").style.display = "block";
 
 resize();
-resize();
 //recommend();
 trending("trending-rec");
 getTwyyt();
@@ -52,15 +51,15 @@ function getTwyyt() {
             document.getElementById("likeNum").innerHTML = (twyyt[0].likes.match(/"handle"/g) || []).length;
 
             if (twyyt[0].likes.indexOf(handle) > -1) {
-                document.getElementById("like-pic").src = "../res/ast/liked.png";
+                document.getElementById("like-pic").src = "../res/ast/liked.svg";
             } else {
-                document.getElementById("like-pic").src = "../res/ast/like.png";
+                document.getElementById("like-pic").src = "../res/ast/like.svg";
             }
             
             if (twyyt[0].retwyyts.indexOf(handle) > -1) {
-                document.getElementById("retwyyt-pic").src = "../res/ast/retwyyted.png";
+                document.getElementById("retwyyt-pic").src = "../res/ast/retwyyted.svg";
             } else {
-                document.getElementById("retwyyt-pic").src = "../res/ast/retwyyt.png";
+                document.getElementById("retwyyt-pic").src = "../res/ast/retwyyt.svg";
             }
             
             if (twyyt[0].sources != "") {
@@ -160,7 +159,7 @@ function createRelevent(data) {
 
         pic = document.createElement("img");
         pic.src = "../res/usr/" + data[i].img;
-        pic.style = "width: 48px; background-color: white; border-radius: 100px; float: left;";
+        pic.style = "width: 48px; height: 48px; background-color: white; border-radius: 100px; float: left;";
 
         usrname = document.createElement("p");
         usrname.innerHTML = data[i].name;
@@ -279,12 +278,12 @@ function construct(data) {
     
     imgDiv = document.createElement("div");
     imgDiv.className = "teleport";
-    imgDiv.style = "width: 60px; display: inline-block; float: left; overflow: hidden;";
+    imgDiv.style = "width: 60px; height: 60px; display: inline-block; float: left; overflow: hidden;";
 
     pic = document.createElement("img");
     pic.className = "teleport";
     pic.src = "../res/usr/" + data.pic;
-    pic.style = "width: 48px; background-color: white; border-radius: 100px; margin: 10px 12px;";
+    pic.style = "width: 48px; height: 48px; background-color: white; border-radius: 100px; margin: 10px 12px;";
 
     imgDiv.appendChild(pic);
 
@@ -296,7 +295,7 @@ function construct(data) {
     dwnDiv.className = "opt-img";
     dwnDiv.style = "float: right; padding: 6px 10px; margin-top: 8px;";
     dwn = document.createElement("img");
-    dwn.src = "../res/ast/dywn.png";
+    dwn.src = "../res/ast/dywn.svg";
     dwn.style = "width: 10px; height: 10px;";
     dwnDiv.appendChild(dwn);
 
@@ -331,7 +330,7 @@ function construct(data) {
 
     bar = document.createElement("div");
     bar.style = "width: 100%; margin-left: -10px;";
-    bar.innerHTML = '<div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="comment(this.parentElement.parentElement.parentElement.parentElement.id)"><img src="../res/ast/comment.png"></div> <span class="stat">' + (data.comments.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="retwyyt(this.parentElement.parentElement.parentElement.parentElement.id)"><img src="../res/ast/' + reStat + '.png"></div><span class="stat">' + (data.retwyyts.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="like(this);"><img src="../res/ast/' + likeStat + '.png"></div><span class="stat">' + (data.likes.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/share.png"></div></div>';
+    bar.innerHTML = '<div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="comment(this.parentElement.parentElement.parentElement.parentElement.id)"><img src="../res/ast/comment.svg"></div> <span class="stat">' + (data.comments.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="retwyyt(this.parentElement.parentElement.parentElement.parentElement.id)"><img src="../res/ast/' + reStat + '.svg"></div><span class="stat">' + (data.retwyyts.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="like(this);"><img src="../res/ast/' + likeStat + '.svg"></div><span class="stat">' + (data.likes.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/share.svg"></div></div>';
 
     textDiv.appendChild(dwnDiv);
     textDiv.appendChild(info);
@@ -415,13 +414,13 @@ function likeTwyyt() {
     if (action.src.indexOf("liked") > -1) {
         //unlike
         typ = "unlike";
-        action.src = "../res/ast/like.png";
+        action.src = "../res/ast/like.svg";
         document.getElementById("likeNum").innerHTML = parseInt(document.getElementById("likeNum").innerHTML) -1;
     } else {
         //like
         
         typ = "like";
-        action.src = "../res/ast/liked.png";
+        action.src = "../res/ast/liked.svg";
         document.getElementById("likeNum").innerHTML = parseInt(document.getElementById("likeNum").innerHTML) +1;
     }
     url = "../php/change.php?typ=" + typ + "&id=" + twyyt;

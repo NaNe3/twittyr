@@ -27,28 +27,28 @@
                 <div id="nav-body" style="position: relative;">
                     <div class="opt-cont">
                         <div class="nav-opt">
-                            <img src="../res/ast/byrd.png" style="width: 30px; height: 30px;" onclick="teleport('../home', 'Home / Twittyr', './source/home.php', './js/twittyr.js')">
+                            <img src="../res/ast/byrd.svg" style="width: 30px; height: 30px;" onclick="teleport('../home', 'Home / Twittyr', './source/home.php', './js/twittyr.js')">
 
                         </div>
                     </div>
 
                     <div class="opt-cont" onclick="teleport('../home', 'Home / Twittyr', './source/home.php', './js/twittyr.js')">
                         <div class="nav-opt">
-                            <img src="../res/ast/home.png">
+                            <img src="../res/ast/home.svg">
                             <p class="opt-text">Home</p>
                         </div>
                     </div>
 
                     <div class="opt-cont" onclick="teleport('../explore', 'Explore / Twittyr', './source/explore.php', './js/explore.js')">
                         <div class="nav-opt">
-                            <img src="../res/ast/wyrld.png">
+                            <img src="../res/ast/wyrld.svg">
                             <p class="opt-text">Explore</p>
                         </div>
                     </div>
 
                     <div class="opt-cont" onclick="teleport('../notifications', 'Notifications / Twittyr', './source/notifications.php', './js/notifications.js')" style="position: relative;">
                         <div class="nav-opt">
-                            <img src="../res/ast/bell.png">
+                            <img src="../res/ast/bell.svg">
                             <?php 
                                 if ($_SESSION['notifications'] > 0) {
                                     echo '<p style="background-color: #1DA1F2; color:white; border-radius: 100px; font-size: 11px; padding: 2px 5px; line-height: 12px; font-weight: 100; position: absolute;  top: 6px; left: 8px;">' . $_SESSION['notifications'] . '</p>';
@@ -60,53 +60,53 @@
                     
                     <div class="opt-cont">
                         <div class="nav-opt">
-                            <img src="../res/ast/messages.png">
+                            <img src="../res/ast/messages.svg">
                             <p class="opt-text">Messages</p>
                         </div>
                     </div>
                     
                     <div class="opt-cont">
                         <div class="nav-opt">
-                            <img src="../res/ast/mark.png">
+                            <img src="../res/ast/mark.svg">
                             <p class="opt-text">Bookmarks</p>
                         </div>
                     </div>
                     
                     <div class="opt-cont">
                         <div class="nav-opt">
-                            <img src="../res/ast/list.png">
+                            <img src="../res/ast/list.svg">
                             <p class="opt-text">Lists</p>
                         </div>
                     </div>
 
                     <div class="opt-cont">
                         <div class="nav-opt" onclick="teleport('./<?php echo $_SESSION['handle'] ?>', '<?php echo $_SESSION['name']?> (@<?php echo $_SESSION['handle'] ?>) / Twittyr', './source/profile.php', './js/profile.js')">
-                            <img src="../res/ast/dude.png">
+                            <img src="../res/ast/dude.svg">
                             <p class="opt-text">Profile</p>
                         </div>
                     </div>
                     
                     <div class="opt-cont" style="position: relative;" onclick="moretoggle(event)">
                         <div id="more-view" class="dropdown-content" style="padding: 10px 0px; pointerEvents: none; width: 200px; left: 0; bottom: 0; border-radius: 5px;">
-                            <a href="#" style="border: 0; font-size: 15px;"><img src="../res/ast/invite.png" style="width: 20px; float: left; margin-right: 5px;">Invite Center</a>
-                            <a href="#" style="border: 0; font-size: 15px;"><img src="../res/ast/lemonade.png" style="width: 20px; float: left; margin-right: 5px;">Lemonade stand</a>
+                            <a href="#" style="border: 0; font-size: 15px;"><img src="../res/ast/invite.svg" style="width: 20px; float: left; margin-right: 5px;">Invite Center</a>
+                            <a href="#" style="border: 0; font-size: 15px;"><img src="../res/ast/lemonade.svg" style="width: 20px; float: left; margin-right: 5px;">Lemonade stand</a>
                             
-                            <a style="font-size: 15px;" onclick="teleport('../settings', 'Settings / Twittyr', './source/settings.php', './js/settings.js')"><img src="../res/ast/settings.png" style="width: 20px; float: left; margin-right: 5px;">Settings and privacy</a>
+                            <a style="font-size: 15px;" onclick="teleport('../settings', 'Settings / Twittyr', './source/settings.php', './js/settings.js')"><img src="../res/ast/settings.svg" style="width: 20px; float: left; margin-right: 5px;">Settings and privacy</a>
                         </div>
                         
                         <div class="nav-opt">
-                            <img src="../res/ast/more.png">
+                            <img src="../res/ast/more.svg">
                             <p class="opt-text">More</p>
                         </div>
                     </div>
 
-                    <button id="twyyt-but" style="width: 100%; margin-top: 10px;" onclick="document.getElementById('twyyt-modal').style.display = 'block';">Twyyt</button>
+                    <button id="twyyt-but" style="width: 100%; height:45px;  margin-top: 10px;" onclick="document.getElementById('twyyt-modal').style.display = 'block';">Twyyt</button>
 
                     <div id="profile-btn" class="opt-cont" onclick="toggle(event)" style="width: 100%; margin-bottom: 10px; display: none;">
                         <div id="user-drop" class="nav-opt dropbtn" style="width: 100%; position: absolute; bottom: 8px; left: 0; width: 100%;">
                             <img src="../res/usr/<?php echo $_SESSION['img']; ?>" style="background-color: white; border-radius: 100px; padding: 0px; width: 39px; height: 39px;" >
                             <div id="profile-info" style="width: 100%;">
-                                <img src="../res/ast/dywn.png" style="height: 15px; width: 15px; float: right; margin: 13px 0px 0px 0px;">
+                                <img src="../res/ast/dywn.svg" style="height: 15px; width: 15px; float: right; margin: 13px 0px 0px 0px;">
                                 <div style="width: 60%; overflow: hidden; height: 40px;">
                                     <div style="max-width: 600px;">
                                         <p style=" display: inline-block; margin-left: 10px; font-size: 15px; color: white; line-height: 16px;"><?php echo $_SESSION['name']; ?></p>
@@ -120,7 +120,7 @@
                     <div id="profile-view" class="dropdown-content" style="padding: 10px 0px; pointerEvents: none;">
                         <div style="width: 100%; background-color: #15202b; padding: 10px; overflow: auto;">
                             <img src="../res/usr/<?php echo $_SESSION['img']; ?>" style="background-color: white; border-radius: 100px; padding: 0px; width: 55px; height: 55px; float: left;" >
-                            <img src="../res/ast/check.png" style="height: 20px; width: 20px; float: right; margin: 17px 10px 0px 0px;">
+                            <img src="../res/ast/check.svg" style="height: 20px; width: 20px; float: right; margin: 17px 10px 0px 0px;">
                             <p style="width: 50%; display: inline-block; font-size: 15px; color: white; line-height: 16px; margin: 7px 0px 0px 10px; font-weight: 600;"><?php echo $_SESSION['name']; ?></p>
                             <p style="display: inline-block; font-size: 14px; color: #6a8290; margin-left: 10px; line-height: 14px; font-weight: 100; margin-top: 5px;">@<?php echo $_SESSION['handle']; ?></p>
                         </div>
@@ -168,7 +168,7 @@
                 <div id="head-cont" style="z-index: 100;">
                     <div class="opt-cont" style="float: left; width: auto; margin-top: 5px; margin-right: 20px;">
                         <div class="nav-opt">
-                            <img src="../res/ast/back.png" style="height: 24px; width: 24px; margin-right: 0px;" onclick="teleport('../home', 'Home / Twittyr', './source/home.php', './js/twittyr.js')">
+                            <img src="../res/ast/back.svg" style="height: 24px; width: 24px; margin-right: 0px;" onclick="teleport('../home', 'Home / Twittyr', './source/home.php', './js/twittyr.js')">
                         </div>
                     </div>
                     <p>Connect</p>

@@ -229,6 +229,29 @@ function proswitch(btn, mode) {
     }
 }
 
+function changeProfileState() {
+    console.log("change profile now");
+    //profile page
+    //document.getElementById("landing-place").src = document.getElementById("profile-landing").src;
+    //document.getElementById("pic-place").src = document.getElementById("profile-pic").src;
+    //document.getElementById("name-place").innerHTML = document.getElementById("profile-name").value;
+    //document.getElementById("bio-place").innerHTML = document.getElementById("profile-bio").value;
+
+    //refLanding = document.getElementById("landing-place").src;
+    caches.open('v1').then(function(cache) {
+        cache.delete(theimage).then(function(response) {console.log("it is done");});
+        //cache.delete(refLanding).then(function(response) {console.log("it is done");});
+        //cache.delete(theimage);
+    })
+
+    //window.location.href = window.location.href;
+
+    //account button on bottom left
+    //document.getElementById("").src
+    //document.getElementById("").innerHTML
+}
+
+
 function editpro(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -356,6 +379,7 @@ function getSources() {
         }
     });
 }
+
 
 
 

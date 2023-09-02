@@ -16,7 +16,7 @@ dude = dude[dude.length-2];
 
 if (dude == handle) {
     document.getElementById("profile-select").style.color = "#1DA1F2";
-    document.getElementById("profile-select-img").src = "../res/ast/dude-s.png";
+    document.getElementById("profile-select-img").src = "../res/ast/dude-s.svg";
 }
 
 resize();

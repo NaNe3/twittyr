@@ -35,46 +35,53 @@ function getNotifications() {
 
 function notify(data) {
     data = JSON.parse(data[0].notifications);
+
+    followers = [];
+
+    // FIRST WRITE UP ALL OF THE PREVIOUSLY SEEN NOTIFICATIONS
     for(var i=data.length-1; i>-1; i--) {
-        div = document.createElement("div");
-        div.className = "twyyt";
-        if (data[i].status == "unseen") {
-            div.style.backgroundColor = "#153044";
+        if (data[i].status  != "unseen") {
+            div = document.createElement("div");
+            div.className = "twyyt";
+            if (data[i].status == "unseen") {
+                div.style.backgroundColor = "#153044";
+            }
+            
+            imgDiv = document.createElement("div");
+            imgDiv.style = "width: 60px; display: inline-block; float: left; overflow: hidden;";
+    
+            pic = document.createElement("img");
+            pic.src = "./res/ast/" + data[i].type + ".svg";
+            pic.style = "width: 30px; margin: 10px 0px; float: right; border-radius: 100px;";
+    
+            imgDiv.appendChild(pic);
+    
+            textDiv = document.createElement("div");
+            textDiv.style = "max-width: 524px; width: 100%; display: inline-block; margin-top: 0px; padding-left: 16px; overflow: hidden;";
+            
+            theimg = document.createElement("img");
+            theimg.src = "./res/usr/" + data[i].pic;
+            theimg.style = "width: 30px; margin: 10px 0px 0px 0px; border-radius: 100px; background-color: white;";
+            
+            notification = document.createElement("p");
+            notification.style = "font-size: 15px; color: white; margin: 8px 0px;";
+            notification.innerHTML = "<span style='font-weight: 700;'>" + data[i].name + "</span> " + data[i].content;
+            
+            subject = document.createElement("p");
+            subject.style = "font-weight: 100; color: #7d8e9b; font-size: 15px; margin: 8px 0px;";
+            subject.innerHTML = data[i].text;
+            
+            textDiv.appendChild(theimg);
+            textDiv.appendChild(notification);
+            textDiv.appendChild(subject);
+            
+            div.appendChild(imgDiv);
+            div.appendChild(textDiv);
+            
+            document.getElementById("twyyts").appendChild(div);
         }
-        
-        imgDiv = document.createElement("div");
-        imgDiv.style = "width: 60px; display: inline-block; float: left; overflow: hidden;";
-
-        pic = document.createElement("img");
-        pic.src = "./res/ast/" + data[i].type + ".png";
-        pic.style = "width: 30px; margin: 10px 0px; float: right; border-radius: 100px;";
-
-        imgDiv.appendChild(pic);
-
-        textDiv = document.createElement("div");
-        textDiv.style = "max-width: 524px; width: 100%; display: inline-block; margin-top: 0px; padding-left: 16px; overflow: hidden;";
-        
-        theimg = document.createElement("img");
-        theimg.src = "./res/usr/" + data[i].pic;
-        theimg.style = "width: 30px; margin: 10px 0px 0px 0px; border-radius: 100px; background-color: white;";
-        
-        notification = document.createElement("p");
-        notification.style = "font-size: 15px; color: white; margin: 8px 0px;";
-        notification.innerHTML = "<span style='font-weight: 700;'>" + data[i].name + "</span> " + data[i].content;
-        
-        subject = document.createElement("p");
-        subject.style = "font-weight: 100; color: #7d8e9b; font-size: 15px; margin: 8px 0px;";
-        subject.innerHTML = data[i].text;
-        
-        textDiv.appendChild(theimg);
-        textDiv.appendChild(notification);
-        textDiv.appendChild(subject);
-        
-        div.appendChild(imgDiv);
-        div.appendChild(textDiv);
-        
-        document.getElementById("twyyts").appendChild(div);
     }
+
     document.getElementById("twyyts-loading").style.display = "none";
 }
 

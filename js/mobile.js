@@ -94,7 +94,7 @@ function build(data, type, thesub) {
     dwnDiv.className = "opt-img";
     dwnDiv.style = "float: right; padding: 6px 10px; margin-top: 8px;";
     dwn = document.createElement("img");
-    dwn.src = "../res/ast/dywn.png";
+    dwn.src = "../res/ast/dywn.svg";
     dwn.style = "width: 10px; height: 10px;";
     dwnDiv.appendChild(dwn);
 
@@ -140,7 +140,7 @@ function build(data, type, thesub) {
 
     bar = document.createElement("div");
     bar.style = "width: 100%; margin-left: -10px;";
-    bar.innerHTML = '<div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/comment.png"></div> <span class="stat">' + (data.comments.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/' + reStat + '.png"></div><span class="stat">' + (data.retwyyts.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/' + likeStat + '.png"></div><span class="stat">' + (data.likes.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/share.png"></div></div>';
+    bar.innerHTML = '<div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/comment.svg"></div> <span class="stat">' + (data.comments.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/' + reStat + '.svg"></div><span class="stat">' + (data.retwyyts.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/' + likeStat + '.svg"></div><span class="stat">' + (data.likes.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="../res/ast/share.svg"></div></div>';
 
     textDiv.appendChild(dwnDiv);
     textDiv.appendChild(info);

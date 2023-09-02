@@ -12,6 +12,7 @@ function resize() {
     if (screen.width < 640) {
         //mobile view
     } else {
+        document.getElementById("twyyt-but").transition = "0s";
         if (window.innerWidth < 1100 && document.getElementById("nav-bar").style.width == "80px") {
             document.getElementById("info-col").style.display = "none";
             document.getElementById("body-cont").style.width = "680px";
@@ -22,8 +23,10 @@ function resize() {
                 opts[j].style.display = "none";
             }
             document.getElementById("nav-bar").style.width = "80px";
-            document.getElementById("twyyt-but").style.display = "none";
             document.getElementById("profile-info").style.display = "none";
+            
+            document.getElementById("twyyt-but").innerHTML = "<img src='./res/ast/twyyt-small.svg' style='width: 25px; height: 25px; margin-top: 2px;'>";
+            document.getElementById("twyyt-but").style.width = "45px";
 
 
 
@@ -41,8 +44,10 @@ function resize() {
             }
             
             document.getElementById("nav-bar").style.width = "80px";
-            document.getElementById("twyyt-but").style.display = "none";
             document.getElementById("profile-info").style.display = "none";
+            
+            document.getElementById("twyyt-but").innerHTML = "<img src='./res/ast/twyyt-small.svg' style='width: 25px; height: 25px; margin-top: 2px;'>";
+            document.getElementById("twyyt-but").style.width = "45px";
 
 
 
@@ -57,9 +62,13 @@ function resize() {
                 opts[j].style.display = "block";
             }
             document.getElementById("nav-bar").style.width = "280px";
-            document.getElementById("twyyt-but").style.display = "block";
             document.getElementById("profile-info").style.display = "block";
+            
+            document.getElementById("twyyt-but").innerHTML = "Twyyt";
+            document.getElementById("twyyt-but").style.width = "100%";
         }
+        document.getElementById("twyyt-but").style.height = "45px";
+        document.getElementById("twyyt-but").transition = "0.2s";
     }
     
     document.getElementById("nav-body").style.height = window.innerHeight + "px";

@@ -21,7 +21,7 @@ if (load.indexOf("twyyt-form-modal") == -1) {
                 sid = sessionStorage.getItem("re");
                 
                 //document.getElementById("ret-num-" + sid).innerHTML = parseInt(document.getElementById("ret-num-" + sid).innerHTML) + 1;
-                //document.getElementById("ret-img-" + sid).src = "./res/ast/retwyyted.png";
+                //document.getElementById("ret-img-" + sid).src = "./res/ast/retwyyted.svg";
             } else if (document.getElementById("comment-sub").style.display != "none") {
                 theurl = "./php/post.php?typ=twyyt&re=-1&co=" + sessionStorage.getItem("co");
                 sid = sessionStorage.getItem("co");
@@ -99,10 +99,18 @@ if (load.indexOf("edit-profile-modal") == -1) {
             data: formData,
             cache: false,
             contentType: false,
-            processData: false
+            processData: false,
+            success: function(data){
+                window.location.reload(true);
+            }
         });
-        teleport('./' + handle, user[0].name + ' (@' + handle + ') / Twittyr', './source/profile.php', './js/profile.js');
+        //document.getElementById("landing-place").src = document.getElementById("profile-landing").src;
+        //document.getElementById("pic-place").src = document.getElementById("profile-pic").src;
+        //document.getElementById("name-place").innerHTML = document.getElementById("profile-name").value;
+        //document.getElementById("bio-place").innerHTML = document.getElementById("profile-bio").value;
         
+        //teleport('./' + handle, user[0].name + ' (@' + handle + ') / Twittyr', './source/profile.php', './js/profile.js');
+        //window.location.href = window.location.href;
         
         return false;
     });
@@ -447,9 +455,9 @@ function produce(rec, loc) {
         
         arrowImg = document.createElement("img");
         if (window.location.href.indexOf("/twyyt/") > -1 || window.location.href.indexOf("/i/") > -1 || window.location.href.indexOf('/followers') > -1 || window.location.href.indexOf('/following') > -1) {
-            arrowImg.src = "../res/ast/dywn.png";
+            arrowImg.src = "../res/ast/dywn.svg";
         } else {
-            arrowImg.src = "./res/ast/dywn.png";   
+            arrowImg.src = "./res/ast/dywn.svg";   
         }
         arrowImg.style = "width: 10px; height: 10px;";
         
@@ -659,7 +667,7 @@ function build(data, type, thesub) {
     dwnDiv.className = "opt-img";
     dwnDiv.style = "float: right; padding: 6px 10px; margin-top: 8px;";
     dwn = document.createElement("img");
-    dwn.src = "./res/ast/dywn.png";
+    dwn.src = "./res/ast/dywn.svg";
     dwn.style = "width: 10px; height: 10px;";
     dwnDiv.appendChild(dwn);
 
@@ -717,7 +725,7 @@ function build(data, type, thesub) {
 
     bar = document.createElement("div");
     bar.style = "width: 100%; margin-left: -10px;";
-    bar.innerHTML = '<div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="comment(this.parentElement.parentElement.parentElement.parentElement.id)"><img id="com-img-' + data.id + '" src="res/ast/comment.png"></div> <span id="com-num-' + data.id + '" class="stat">' + (data.comments.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="retwyyt(this.parentElement.parentElement.parentElement.parentElement.id)"><img  id="ret-img-' + data.id + '" src="res/ast/' + reStat + '.png"></div><span id="ret-num-' + data.id + '" class="stat">' + (data.retwyyts.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="like(this);"><img id="lik-img-' + data.id + '" src="res/ast/' + likeStat + '.png"></div><span class="stat">' + (data.likes.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="res/ast/share.png"></div></div>';
+    bar.innerHTML = '<div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="comment(this.parentElement.parentElement.parentElement.parentElement.id)"><img id="com-img-' + data.id + '" src="res/ast/comment.svg"></div> <span id="com-num-' + data.id + '" class="stat">' + (data.comments.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="retwyyt(this.parentElement.parentElement.parentElement.parentElement.id)"><img  id="ret-img-' + data.id + '" src="res/ast/' + reStat + '.svg"></div><span id="ret-num-' + data.id + '" class="stat">' + (data.retwyyts.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img" onclick="like(this);"><img id="lik-img-' + data.id + '" src="res/ast/' + likeStat + '.svg"></div><span class="stat">' + (data.likes.match(/"handle"/g) || []).length + '</span></div><div style="width: 25%; overflow: auto; float: left;" class="teleport"><div class="opt-img"><img src="res/ast/share.svg"></div></div>';
 
     textDiv.appendChild(dwnDiv);
     textDiv.appendChild(info);
@@ -1102,13 +1110,13 @@ function like(el) {
     if (action.indexOf("liked") > -1) {
         //unlike
         typ = "unlike";
-        el.childNodes[0].src = "./res/ast/like.png";
+        el.childNodes[0].src = "./res/ast/like.svg";
         el.nextSibling.innerHTML = parseInt(el.nextSibling.innerHTML) -1;
     } else {
         //like
         
         typ = "like";
-        el.childNodes[0].src = "./res/ast/liked.png";
+        el.childNodes[0].src = "./res/ast/liked.svg";
         el.nextSibling.innerHTML = parseInt(el.nextSibling.innerHTML) +1;
     }
     url = "./php/change.php?typ=" + typ + "&id=" + twyyt;
